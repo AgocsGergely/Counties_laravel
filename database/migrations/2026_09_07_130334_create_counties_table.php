@@ -12,8 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('counties', function (Blueprint $table) {
-            $table->id();
+            $table->id("id");
             $table->string('name');
+            $table->string("img_url");
             $table->timestamps();
         });
     }

@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('cities', function (Blueprint $table) {
             $table->id();
             $table->integer('zip_code');
-            $table->string('city');
-            $table->integer('id_county');
+            $table->string('name');
+            $table->unsignedBigInteger('id_county');
+            $table->foreign('id_county')->references('id')->on('counties')->onDelete('cascade');
             $table->integer('population');
             $table->timestamps();
         });
